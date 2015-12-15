@@ -33,7 +33,7 @@ public class RetrieveTweetsAsyncTask extends AsyncTask<String, Integer, List<Twe
         if (TextUtils.isEmpty(login[0])) {
             return null;
         } else {
-            tweets = TwitterHelper.getTweetsOfUser(login[0]);
+             tweets = TwitterHelper.getTweetsOfUser(login[0]);
         }
         return tweets;
     }

@@ -44,7 +44,7 @@ public class WLTwitterActivity extends Activity implements TweetChangeListener, 
 		if (savedInstanceState == null) {
 			getFragmentManager().beginTransaction().add(R.id.container, new TweetsFragment()).commit();
 		}
-		//TweetsFragment fragment = new RetrieveTweetsAsyncTask(tweetListener).execute(login);
+
 
 	}
 

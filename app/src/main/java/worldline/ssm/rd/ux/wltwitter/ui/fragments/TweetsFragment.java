@@ -6,6 +6,7 @@ import worldline.ssm.rd.ux.wltwitter.interfaces.TweetChangeListener;
 import worldline.ssm.rd.ux.wltwitter.interfaces.TweetListener;
 import worldline.ssm.rd.ux.wltwitter.pojo.Tweet;
 import worldline.ssm.rd.ux.wltwitter.utils.PreferenceUtils;
+import worldline.ssm.rd.ux.wltwitter.utils.SpecialAdapter;
 
 import android.app.ActionBar;
 import android.app.Activity;
@@ -73,7 +74,8 @@ public class TweetsFragment extends Fragment implements TweetChangeListener, Ada
 	@Override
 	public void onTweetRetrieved(List<Tweet> tweets) {
 
-		final ArrayAdapter<Tweet> arrayAdapter = new ArrayAdapter<Tweet>(getActivity(),android.R.layout.simple_list_item_1,tweets);
+		//final ArrayAdapter<Tweet> arrayAdapter = new ArrayAdapter<Tweet>(getActivity(),android.R.layout.simple_list_item_1,tweets);
+		final ArrayAdapter<Tweet> arrayAdapter = new SpecialAdapter(getActivity(),android.R.layout.simple_list_item_1,tweets);
 		mListView.setAdapter(arrayAdapter);
 	}
 
