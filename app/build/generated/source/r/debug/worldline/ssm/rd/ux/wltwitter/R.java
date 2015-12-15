@@ -33,12 +33,14 @@ public final class R {
         public static final int white_round_corners_background=0x7f020005;
     }
     public static final class id {
-        public static final int actionLogout=0x7f0a0005;
-        public static final int action_settings=0x7f0a0004;
+        public static final int actionLogout=0x7f0a0007;
+        public static final int action_settings=0x7f0a0006;
         public static final int container=0x7f0a0003;
         public static final int loginButton=0x7f0a0002;
         public static final int loginEditText=0x7f0a0000;
         public static final int passwordEditText=0x7f0a0001;
+        public static final int tweetsListView=0x7f0a0005;
+        public static final int tweetsRootRelativeLayout=0x7f0a0004;
     }
     public static final class layout {
         public static final int activity_login=0x7f040000;

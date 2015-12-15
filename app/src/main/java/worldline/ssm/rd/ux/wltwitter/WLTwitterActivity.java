@@ -1,16 +1,23 @@
 package worldline.ssm.rd.ux.wltwitter;
 
 import worldline.ssm.rd.ux.wltwitter.async.RetrieveTweetsAsyncTask;
+import worldline.ssm.rd.ux.wltwitter.interfaces.TweetChangeListener;
+import worldline.ssm.rd.ux.wltwitter.interfaces.TweetListener;
+import worldline.ssm.rd.ux.wltwitter.pojo.Tweet;
 import worldline.ssm.rd.ux.wltwitter.ui.fragments.TweetsFragment;
 import worldline.ssm.rd.ux.wltwitter.utils.Constants;
 import worldline.ssm.rd.ux.wltwitter.utils.PreferenceUtils;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
-public class WLTwitterActivity extends Activity {
+import java.util.List;
+
+public class WLTwitterActivity extends Activity implements TweetChangeListener, TweetListener {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +36,7 @@ public class WLTwitterActivity extends Activity {
 				getActionBar().setSubtitle(login);
 
 				RetrieveTweetsAsyncTask task = new RetrieveTweetsAsyncTask();
+				Log.d("Main","Before retrieveasync");
 				task.execute(login);
 			}
 		}
@@ -45,6 +53,11 @@ public class WLTwitterActivity extends Activity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.wltwitter, menu);
 		return true;
+	}
+
+	@Override
+	public void onTweetRetrieved(List<Tweet> tweets) {
+
 	}
 
 	@Override
@@ -66,6 +79,13 @@ public class WLTwitterActivity extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 
-	
+	@Override
+	public void onReTweet(Tweet tweet) {
 
+	}
+
+	@Override
+	public void onViewTweet(Tweet tweet) {
+		Toast.makeText(this,tweet.text,Toast.LENGTH_LONG).show();
+	}
 }
