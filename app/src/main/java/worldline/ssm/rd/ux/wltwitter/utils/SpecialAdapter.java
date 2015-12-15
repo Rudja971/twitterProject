@@ -12,6 +12,8 @@ import android.widget.ArrayAdapter;
 import android.widget.SimpleAdapter;
 import worldline.ssm.rd.ux.wltwitter.pojo.Tweet;
 
+
+//Classe permettant d'avoir un tweet sur deux de couleur bleu.
 public class SpecialAdapter extends ArrayAdapter {
 
     //private int[] colors = new int[] { 0x30FF0000, 0x300000FF };

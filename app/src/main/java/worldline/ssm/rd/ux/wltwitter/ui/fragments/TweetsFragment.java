@@ -75,6 +75,8 @@ public class TweetsFragment extends Fragment implements TweetChangeListener, Ada
 	public void onTweetRetrieved(List<Tweet> tweets) {
 
 		//final ArrayAdapter<Tweet> arrayAdapter = new ArrayAdapter<Tweet>(getActivity(),android.R.layout.simple_list_item_1,tweets);
+
+		//Ici nous utilisons la classe SpecialAdapter afin de donner de la couleur à nos tweets
 		final ArrayAdapter<Tweet> arrayAdapter = new SpecialAdapter(getActivity(),android.R.layout.simple_list_item_1,tweets);
 		mListView.setAdapter(arrayAdapter);
 	}
